@@ -9,5 +9,6 @@ namespace DnDCore.Interfaces
     public interface IPlayer
     {
         public void SetPlayerStats(string name, int health);
+        public void GetPlayerStats(string name);
     }
 }
