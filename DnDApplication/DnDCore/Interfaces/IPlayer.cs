@@ -8,6 +8,6 @@ namespace DnDCore.Interfaces
 {
     public interface IPlayer
     {
-        public void SetPlayerStats();
+        public void SetPlayerStats(string name, int health);
     }
 }
