@@ -9,20 +9,9 @@ namespace DnDCore
         {
             Console.WriteLine($"{player.Name} roll for damage: ");
             var userInput = Console.ReadLine();
-            var damage = ConvertDamageToInt(userInput);
+            var isValid = Validation.CheckUserInput(userInput);
+            var damage = Validation.ConvertStringToInt(isValid, userInput);
             return damage;
-        }
-        public static int ConvertDamageToInt(string result)
-        {
-            if (string.IsNullOrWhiteSpace(result))
-            {
-                throw new NullReferenceException();
-            }
-            else
-            {
-                return Convert.ToInt32(result);
-            }
-            
         }
         #endregion
 
