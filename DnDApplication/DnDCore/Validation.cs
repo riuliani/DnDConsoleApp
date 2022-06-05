@@ -24,7 +24,7 @@ namespace DnDCore
         {
             if (result == true)
             {
-                throw new ArgumentNullException();
+                return 0;
             }
             else
             {
