@@ -7,7 +7,7 @@ namespace DnDCore
         #region Player Attacking Methods
         public static int AttackEnemy(IPlayer player)
         {
-            Console.WriteLine($"{player.Name} roll for damage: ");
+            Console.WriteLine($"{player.Name} enter total damage done: ");
             var userInput = Console.ReadLine();
             var isValid = Validation.CheckUserInput(userInput);
             var damage = Validation.ConvertStringToInt(isValid, userInput);
