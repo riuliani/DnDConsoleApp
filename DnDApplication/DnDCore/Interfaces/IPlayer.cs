@@ -12,5 +12,7 @@ namespace DnDCore.Interfaces
         public int Health { get; set; }
         public int DamageDone { get; set; }
         public int DamageTaken { get; set; }
+
+        public void AddDamageDone(int damageDone);
     }
 }
