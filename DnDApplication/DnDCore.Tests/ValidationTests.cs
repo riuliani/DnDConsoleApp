@@ -4,6 +4,7 @@ namespace DnDCore.Tests
 {
     public class Tests
     {
+        #region User Input Tests
         [Test]
         [TestCase("", true)]
         [TestCase(" ", true)]        
@@ -26,5 +27,6 @@ namespace DnDCore.Tests
             Assert.IsTrue(result == expectedResult);
             Assert.Pass();
         }
+        #endregion
     }
 }
