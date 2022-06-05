@@ -22,15 +22,14 @@ namespace DnDCore
 
         public static int ConvertStringToInt(bool result, string userInput)
         {
-            var newNumber = 0;
             if (result == true)
             {
                 throw new ArgumentNullException();
             }
             else
             {
-                newNumber = Convert.ToInt32(userInput, newNumber);
-                return newNumber;
+                var damage = Convert.ToInt32(userInput);
+                return damage;
             }
         }
     }
