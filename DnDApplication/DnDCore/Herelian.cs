@@ -21,5 +21,10 @@ namespace DnDCore
             DamageDone = 0;
             DamageTaken = 0;
         }
+
+        public void AddDamageDone(int damageDone)
+        {
+            DamageDone += damageDone;
+        }
     }
 }
