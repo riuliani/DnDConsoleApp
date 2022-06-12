@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnDCore.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,19 +8,30 @@ using System.Threading.Tasks;
 namespace DnDCore
 {
     public class Initiative
-    {        
-        public void AddRolesTolist(int initiativeRoll)
+    {
+        private int initiativeRoll;
+        private string playerName;
+        public Initiative(int roll, IPlayer player)
         {
-            var initRollList = new List<int>();
-            initRollList.Add(initiativeRoll);
+            initiativeRoll = roll;
+            playerName = player.Name;
+        }
+        public Dictionary<string,int> AddRolesTolist(int initiativeRoll, string playerName)
+        {
+            var initRollDictionary = new Dictionary<string,int>();
+            initRollDictionary.Add(playerName, initiativeRoll);
+
+            return initRollDictionary;
         }
 
-        public void DisplayOrderFromLargestToSmallest(List<string> initRollList)
+        public void DisplayOrderFromLargestToSmallest(Dictionary<string, int> initRollDictionary)
         {
-            initRollList.Reverse();
-            foreach (var initRoll in initRollList)
+            var result = initRollDictionary.OrderBy(x => x.Key);
+            var displayResult = result.ToDictionary((keyItem) => keyItem.Key, (valueItem) => valueItem.Value);
+            Console.WriteLine("All initiative rolls: ");
+            foreach (var item in displayResult)
             {
-                Console.WriteLine($"{initRoll}");
+                Console.WriteLine($"{item.Key} : {item.Value}");
             }
         }
     }
