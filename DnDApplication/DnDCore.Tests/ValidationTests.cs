@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace DnDCore.Tests
 {
-    public class Tests
+    public class ValidationTests
     {
         #region User Input Tests
         [Test]
